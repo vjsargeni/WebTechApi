@@ -1,0 +1,56 @@
+{
+  "name": "project2",
+  "version": "1.0.0",
+  "description": "Express/Mongo server application (to be used as backend for module 3)",
+  "main": "scripts/build/server.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.3.3",
+    "mongodb-typescript": "^2.0.4",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/passport-jwt": "^3.0.2",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/passport": "^1.0.1",
+    "@types/body-parser": "^1.17.1",
+    "@types/express": "^4.17.1",
+    "@types/mongodb": "^3.3.7",
+    "@types/node": "^12.7.11",
+    "@types/jsonwebtoken": "^8.3.5",
+    "nodemon": "^1.19.3",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.0",
+    "ts-node-dev": "^1.0.0-pre.43",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
+  },
+  "scripts": {
+    "clean": "rimraf scripts/build/*",
+    "lint": "tslint -c tslint.json -p tsconfig.json --fix",
+    "tsc": "tsc",
+    "build": "npm-run-all clean lint tsc",
+    "dev-deb": "ts-node-dev --respawn --transpileOnly --nolazy --inspect-brk=5858 ./src/server.ts",
+    "dev": "ts-node-dev --respawn --transpileOnly ./scripts/src/server.ts",
+    "prod": "npm-run-all build start",
+    "prod-deb": "npm-run-all start-deb",
+    "start": "nodemon --nolazy .scripts/build/server.js",
+    "start-deb": "nodemon --nolazy --inspect-brk=5858 .scripts/build/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CISC474-2019F-Group1/Project2.git"
+  },
+  "keywords": [],
+  "author": "karlstom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CISC474-2019F-Group1/Project2/issues"
+  },
+  "homepage": "https://github.com/CISC474-2019F-Group1/Project2#readme"
+}
